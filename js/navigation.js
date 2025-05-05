@@ -97,10 +97,29 @@ export function initializeNavigation() {
         });
     });
 
+    // 檢查網址設定的 section
+    function handleInitialHash() {
+        const initialHash = window.location.hash || '#home';
+        const targetElement = document.querySelector(initialHash);
+
+        if (targetElement) {
+            const offset = 100;
+            const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: elementPosition - offset,
+                behavior: 'instant'
+            });
+            sectionVisibility.set(initialHash, true);
+            setTimeout(updateNavHighlight, 100);
+        } else {
+            updateNavHighlight();
+        }
+    }
+
     const debouncedUpdate = debounce(updateNavHighlight, 50);
     window.addEventListener('scroll', debouncedUpdate);
     window.addEventListener('hashchange', updateNavHighlight);
 
     observeSections();
-    updateNavHighlight();
+    handleInitialHash();
 }
