@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>成大資訊營隊</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/dark-mode.css">
-<link rel="stylesheet" href="css/animations.css">
-<link rel="stylesheet" href="css/map.css">
-<link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成大資訊營隊</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="icon" href="favicon.ico">
 </head>
 <body class="bg-gray-100">
 <!-- Navigation -->
 <nav class="bg-white shadow fixed w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-        <div class="flex">
-        <div class="flex-shrink-0 flex items-center">
-            <img src="images/egg-logo.png" alt="成大資訊營隊Logo" class="w-24 h-24 object-contain">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="images/egg-logo.png" alt="成大資訊營隊Logo" class="w-24 h-24 object-contain">
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="#home" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">首頁</a>
+                    <a href="#info" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">重要資訊</a>
+                    <a href="#signup" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">如何報名</a>
+                    <a href="#courses" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">課程內容</a>
+                    <a href="#faq" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">常見問題</a>
+                    <a href="#about" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">關於我們</a>
+                    <a href="#contact" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">聯絡我們</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <label class="dark-mode-toggle">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="toggle-icon sun">☀️</span>
+                    <span class="toggle-icon moon">🌙</span>
+                </label>
+                <a href="https://reurl.cc/L59dNx" target="_blank" class="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-yellow-600 transition duration-300">立即報名</a>
+            </div>
         </div>
-        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-            <a href="#home" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">首頁</a>
-            <a href="#info" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">重要資訊</a>
-            <a href="#signup" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">如何報名</a>
-            <a href="#courses" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">課程內容</a>
-            <a href="#faq" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">常見問題</a>
-            <a href="#about" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">關於我們</a>
-            <a href="#contact" class="nav-link border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 hover:border-orange-500 text-sm font-medium">聯絡我們</a>
-        </div>
-        </div>
-        <div class="flex items-center space-x-4">
-        <label class="dark-mode-toggle">
-            <input type="checkbox" id="dark-mode-toggle">
-            <span class="toggle-icon sun">☀️</span>
-            <span class="toggle-icon moon">🌙</span>
-        </label>
-        <a href="https://reurl.cc/L59dNx" target="_blank" class="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-yellow-600 transition duration-300">立即報名</a>
-        </div>
-    </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section id="home" class="hero-bg h-screen relative flex items-center pt-24 animate-fade-in">
+<!-- Hero Section-->
+<section id="home" class="hero-bg min-h-screen relative flex items-center pt-24 pb-8 animate-fade-in">
     <div class="hero-background absolute inset-0 z-0"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
         <img src="images/egg-logo.png" alt="成大資訊營隊Logo" class="hero-logo w-36 h-36 object-contain mb-6 mx-auto animate-slide-up logo-float">
@@ -55,7 +55,7 @@
             <p class="text-lg mb-4 text-white animate-slide-up delay-200">活動地點：國立成功大學成功校區 - 資訊工程學系大樓</p>
             <div class="mt-8 animate-slide-up delay-400">
                 <h3 class="text-lg font-semibold text-white">聯絡資訊</h3>
-                <p class="text-white">Email：nckucsiecamp2025@gmail.com</p>
+                <p class="text-white">Email：<a href="mailto:nckucsiecamp2025@gmail.com">nckucsiecamp2025@gmail.com</a></p>
                 <div class="flex space-x-4 mt-2 animate-slide-up delay-300">
                     <a href="https://www.instagram.com/ncku_csie/" target="_blank" class="text-white hover:text-indigo-300 flex items-center">
                         <img src="https://img.icons8.com/fluency/96/instagram-new.png" alt="Instagram" class="w-5 h-5 mr-2 social-icon">Instagram
@@ -72,25 +72,25 @@
 <!-- Important Info Section -->
 <section id="info" class="py-16 bg-white pt-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold mb-8">重要資訊</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="animate-slide-right">
-            <h3 class="text-xl font-semibold mb-4">活動資訊</h3>
-            <p><strong>時間：</strong>2025年7月9日 - 7月15日</p>
-            <p><strong>地點：</strong>國立成功大學成功校區 - 資訊工程學系大樓</p>
+        <h2 class="text-3xl font-bold mb-8">重要資訊</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="animate-slide-right">
+                <h3 class="text-xl font-semibold mb-4">活動資訊</h3>
+                <p><strong>時間：</strong>2025年7月9日 - 7月15日</p>
+                <p><strong>地點：</strong>國立成功大學成功校區 - 資訊工程學系大樓</p>
+            </div>
+            <div class="animate-slide-left">
+                <h3 class="text-xl font-semibold mb-4">交通資訊</h3>
+                <p><strong>開車：</strong>由台南交流道下高速公路，沿小東路直行至東寧路右轉，續行至長榮路左轉即可抵達成大。</p>
+                <p><strong>火車：</strong>抵達台南火車站後，步行約10分鐘或搭乘計程車至成大光復校區。</p>
+                <p><strong>公車：</strong>搭乘台南市公車至「大學路口」站下車，步行約5分鐘。</p>
+            </div>
         </div>
-        <div class="animate-slide-left">
-            <h3 class="text-xl font-semibold mb-4">交通資訊</h3>
-            <p><strong>開車：</strong>由台南交流道下高速公路，沿小東路直行至東寧路右轉，續行至長榮路左轉即可抵達成大。</p>
-            <p><strong>火車：</strong>抵達台南火車站後，步行約10分鐘或搭乘計程車至成大光復校區。</p>
-            <p><strong>公車：</strong>搭乘台南市公車至「大學路口」站下車，步行約5分鐘。</p>
+        <div class="mt-8 mapouter">
+            <div class="gmap_canvas">
+                <iframe width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/search?q=%E5%9C%8B%E7%AB%8B%E6%88%90%E5%8A%9F%E5%A4%A7%E5%AD%B8%20%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E5%AD%B8%E7%B3%BB&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&zoom=15"></iframe>
+            </div>
         </div>
-    </div>
-    <div class="mt-8 mapouter">
-        <div class="gmap_canvas">
-        <iframe width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/search?q=%E5%9C%8B%E7%AB%8B%E6%88%90%E5%8A%9F%E5%A4%A7%E5%AD%B8%20%E8%B3%87%E8%A8%8A%E5%B7%A5%E7%A8%8B%E5%AD%B8%E7%B3%BB&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&zoom=15"></iframe>
-        </div>
-    </div>
     </div>
 </section>
 
@@ -109,120 +109,120 @@
 <!-- Courses Section -->
 <section id="courses" class="py-16 bg-white pt-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold mb-8">課程內容</h2>
-    <img src="images/course-schedule.png" alt="課程規劃" class="w-full max-w-3xl h-auto mb-6 rounded-lg mx-auto animate-zoom-in">
-    <div class="space-y-12 bg-white bg-opacity-80 p-6 rounded-lg">
-        <div class="animate-slide-up">
-            <h3 class="text-xl font-semibold mb-4">必修Py (3hr)</h3>
-            <ul class="list-disc pl-6">
-                <li>輸出、輸入</li>
-                <li>資料型態&型別轉換</li>
-                <li>算術運算 / round / abs</li>
-                <li>String format / f-string</li>
-                <li>字串操作</li>
-                <li>流程控制-判斷</li>
-                <li>流程控制-迴圈</li>
-                <li>List</li>
-                <li>List Slice / String Slice</li>
-                <li>Dict</li>
-                <li>Function</li>
-            </ul>
+        <h2 class="text-3xl font-bold mb-8">課程內容</h2>
+        <img src="images/course-schedule.png" alt="課程規劃" class="w-full max-w-3xl h-auto mb-6 rounded-lg mx-auto animate-zoom-in">
+        <div class="space-y-12 bg-white bg-opacity-80 p-6 rounded-lg">
+            <div class="animate-slide-up">
+                <h3 class="text-xl font-semibold mb-4">必修Py (3hr)</h3>
+                <ul class="list-disc pl-6">
+                    <li>輸出、輸入</li>
+                    <li>資料型態&型別轉換</li>
+                    <li>算術運算 / round / abs</li>
+                    <li>String format / f-string</li>
+                    <li>字串操作</li>
+                    <li>流程控制-判斷</li>
+                    <li>流程控制-迴圈</li>
+                    <li>List</li>
+                    <li>List Slice / String Slice</li>
+                    <li>Dict</li>
+                    <li>Function</li>
+                </ul>
+            </div>
+            <div class="animate-slide-up delay-100">
+                <h3 class="text-xl font-semibold mb-4">必修C++ (3hr)</h3>
+                <p>因為 Py 已經教了很多語法，這裡會多講 C++ 特別的地方並帶一些實作。</p>
+                <ul class="list-disc pl-6">
+                    <li>輸出、輸入</li>
+                    <li>資料型態&型別轉換</li>
+                    <li>算術運算/運算子</li>
+                    <li>字串操作</li>
+                    <li>流程控制-判斷</li>
+                    <li>流程控制-迴圈</li>
+                    <li>Function</li>
+                </ul>
+            </div>
+            <div class="animate-slide-up delay-200">
+                <h3 class="text-xl font-semibold mb-4">資結/演算法++ (8hr)</h3>
+                <ul class="list-disc pl-6">
+                    <li>vector</li>
+                    <li>stack/queue/deque</li>
+                    <li>set/map</li>
+                    <li>priority_queue</li>
+                </ul>
+            </div>
+            <div class="animate-slide-up delay-300">
+                <h3 class="text-xl font-semibold mb-4">爬蟲 (4hr)</h3>
+                <ul class="list-disc pl-6">
+                    <li>爬蟲概念</li>
+                    <li>Html架構講解</li>
+                    <li>動態網站與靜態網站</li>
+                    <li>靜態網站爬蟲實作 (requests/bs4)</li>
+                    <li>動態網站爬蟲實作 (Selenium)</li>
+                </ul>
+            </div>
+            <div class="animate-slide-up delay-400">
+                <h3 class="text-xl font-semibold mb-4">Discord bot (2hr)</h3>
+                <ul class="list-disc pl-6">
+                    <li>建立 Discord bot 帳號</li>
+                    <li>實作指令</li>
+                    <li>實作Event</li>
+                    <li>更多API查詢教學</li>
+                </ul>
+            </div>
+            <div class="animate-slide-up delay-500">
+                <h3 class="text-xl font-semibold mb-4">電腦網路概論 (2hr)</h3>
+                <ul class="list-disc pl-6">
+                    <li>網路是什麼？為什麼我們需要他？</li>
+                    <li>有限網路與無線網路</li>
+                    <li>網路資料的交換 (封包介紹)</li>
+                    <li>網路協定簡述，為什麼我們需要協定</li>
+                    <li>網路分層介紹</li>
+                    <li>IP 位置</li>
+                    <li>DNS 簡述 (Domain Name Server)</li>
+                    <li>內網？外網？子網域？Port ?</li>
+                    <li>路由器 (Router) 與交換機 (Switch)</li>
+                    <li>Mac 位置</li>
+                </ul>
+            </div>
+            <div class="animate-slide-up delay-600">
+                <h3 class="text-xl font-semibold mb-4">Winform (2hr)</h3>
+                <ul class="list-disc pl-6">
+                    <li>工具箱介紹</li>
+                    <li>按鈕設計</li>
+                    <li>文字框與字串處理</li>
+                    <li>介面切換</li>
+                    <li>MessageBox顯示</li>
+                </ul>
+            </div>
+            <div class="animate-slide-up delay-700">
+                <h3 class="text-xl font-semibold mb-4">Arduino (2hr)</h3>
+                <ul class="list-disc pl-6">
+                    <li>電路與訊號基礎介紹 (電壓、電流、V=IR 等基礎觀念)</li>
+                    <li>Arduino 語法解說</li>
+                    <li>LED 電路實作</li>
+                    <li>按鈕 & LED 電路實作</li>
+                    <li>計時器與非同步閃燈實作</li>
+                    <li>序列傳輸通訊</li>
+                </ul>
+            </div>
         </div>
-        <div class="animate-slide-up delay-100">
-            <h3 class="text-xl font-semibold mb-4">必修C++ (3hr)</h3>
-            <p>因為 Py 已經教了很多語法，這裡會多講 C++ 特別的地方並帶一些實作。</p>
-            <ul class="list-disc pl-6">
-                <li>輸出、輸入</li>
-                <li>資料型態&型別轉換</li>
-                <li>算術運算/運算子</li>
-                <li>字串操作</li>
-                <li>流程控制-判斷</li>
-                <li>流程控制-迴圈</li>
-                <li>Function</li>
-            </ul>
-        </div>
-        <div class="animate-slide-up delay-200">
-            <h3 class="text-xl font-semibold mb-4">資結/演算法++ (8hr)</h3>
-            <ul class="list-disc pl-6">
-                <li>vector</li>
-                <li>stack/queue/deque</li>
-                <li>set/map</li>
-                <li>priority_queue</li>
-            </ul>
-        </div>
-        <div class="animate-slide-up delay-300">
-            <h3 class="text-xl font-semibold mb-4">爬蟲 (4hr)</h3>
-            <ul class="list-disc pl-6">
-                <li>爬蟲概念</li>
-                <li>Html架構講解</li>
-                <li>動態網站與靜態網站</li>
-                <li>靜態網站爬蟲實作 (requests/bs4)</li>
-                <li>動態網站爬蟲實作 (Selenium)</li>
-            </ul>
-        </div>
-        <div class="animate-slide-up delay-400">
-            <h3 class="text-xl font-semibold mb-4">Discord bot (2hr)</h3>
-            <ul class="list-disc pl-6">
-                <li>建立 Discord bot 帳號</li>
-                <li>實作指令</li>
-                <li>實作Event</li>
-                <li>更多API查詢教學</li>
-            </ul>
-        </div>
-        <div class="animate-slide-up delay-500">
-            <h3 class="text-xl font-semibold mb-4">電腦網路概論 (2hr)</h3>
-            <ul class="list-disc pl-6">
-                <li>網路是什麼？為什麼我們需要他？</li>
-                <li>有限網路與無線網路</li>
-                <li>網路資料的交換 (封包介紹)</li>
-                <li>網路協定簡述，為什麼我們需要協定</li>
-                <li>網路分層介紹</li>
-                <li>IP 位置</li>
-                <li>DNS 簡述 (Domain Name Server)</li>
-                <li>內網？外網？子網域？Port ?</li>
-                <li>路由器 (Router) 與交換機 (Switch)</li>
-                <li>Mac 位置</li>
-            </ul>
-        </div>
-        <div class="animate-slide-up delay-600">
-            <h3 class="text-xl font-semibold mb-4">Winform (2hr)</h3>
-            <ul class="list-disc pl-6">
-                <li>工具箱介紹</li>
-                <li>按鈕設計</li>
-                <li>文字框與字串處理</li>
-                <li>介面切換</li>
-                <li>MessageBox顯示</li>
-            </ul>
-        </div>
-        <div class="animate-slide-up delay-700">
-            <h3 class="text-xl font-semibold mb-4">Arduino (2hr)</h3>
-            <ul class="list-disc pl-6">
-                <li>電路與訊號基礎介紹 (電壓、電流、V=IR 等基礎觀念)</li>
-                <li>Arduino 語法解說</li>
-                <li>LED 電路實作</li>
-                <li>按鈕 & LED 電路實作</li>
-                <li>計時器與非同步閃燈實作</li>
-                <li>序列傳輸通訊</li>
-            </ul>
-        </div>
-    </div>
     </div>
 </section>
 
 <!-- FAQ Section -->
 <section id="faq" class="py-16 bg-gray-100 pt-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-bold mb-8">常見問題</h2>
-    <div class="space-y-6">
-        <div class="animate-slide-up">
-            <h3 class="text-lg font-semibold">如何報名？</h3>
-            <p>請至「如何報名」區塊，點選立即報名按鈕，填寫線上表單並完成繳費。</p>
+        <h2 class="text-3xl font-bold mb-8">常見問題</h2>
+        <div class="space-y-6">
+            <div class="animate-slide-up">
+                <h3 class="text-lg font-semibold">如何報名？</h3>
+                <p>請至「如何報名」區塊，點選立即報名按鈕，填寫線上表單並完成繳費。</p>
+            </div>
+            <div class="animate-slide-up delay-100">
+                <h3 class="text-lg font-semibold">需要自備電腦嗎？</h3>
+                <p>系上有電腦教室讓大家可以透過實作學習！我們也會提供隨身碟讓參加的同學們可以把上課資料帶回去喔～</p>
+            </div>
         </div>
-        <div class="animate-slide-up delay-100">
-            <h3 class="text-lg font-semibold">需要自備電腦嗎？</h3>
-            <p>系上有電腦教室讓大家可以透過實作學習！我們也會提供隨身碟讓參加的同學們可以把上課資料帶回去喔～</p>
-        </div>
-    </div>
     </div>
 </section>
 
@@ -252,7 +252,7 @@
             <img src="images/egg-logo.png" alt="成大資訊營隊Logo" class="w-24 h-24 object-contain mr-6">
             <div>
                 <p><strong>地址：</strong>701台南市東區大學路1號</p>
-                <p><strong>Email：</strong>nckucsiecamp2025@gmail.com</p>
+                <p><strong>Email：</strong><a href="mailto:nckucsiecamp2025@gmail.com">nckucsiecamp2025@gmail.com</a></p>
             </div>
         </div>
     </div>
@@ -264,8 +264,6 @@
     </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script type="module" src="js/main.js"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93aadeb08d6cb046',t:'MTc0NjM5MTgyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>

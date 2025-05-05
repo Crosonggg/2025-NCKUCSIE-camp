@@ -132,9 +132,10 @@ body.dark-mode .social-icon {
     transition: filter 0.25s ease-in-out;
 }
 
-body.dark-mode footer {
-    background-color: #2f3136;
-    transition: background-color 0.75s ease-in-out;
+body.dark-mode footer.bg-gray-800 {
+    background-color: #1e2124;
+    color: #dcddde;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
 }
 
 .dark-mode-toggle {

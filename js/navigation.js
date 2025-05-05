@@ -1,27 +1,106 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+export function initializeNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    const sectionVisibility = new Map();
 
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    function updateNavHighlight() {
+        let currentSectionId = '#home';
+
+        // 檢查是否滾動到底部
+        const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
+
+        if (isAtBottom) {
+            currentSectionId = '#contact';
+        } else {
+            // 選擇最靠近視窗頂部的可見 section
+            let closestSection = null;
+            let minTopDistance = Infinity;
+
+            sections.forEach(section => {
+                const sectionId = `#${section.id}`;
+                if (sectionVisibility.get(sectionId)) {
+                    const rect = section.getBoundingClientRect();
+                    const topDistance = Math.abs(rect.top);
+                    if (topDistance < minTopDistance) {
+                        minTopDistance = topDistance;
+                        closestSection = sectionId;
+                    }
+                }
             });
-        }
-    });
-});
 
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        document.querySelectorAll('nav a').forEach(a => {
-            a.classList.remove('border-orange-500', 'text-gray-900');
-            a.classList.add('text-gray-500');
-            a.style.transition = 'all 0.2s ease-in-out';
+            if (closestSection) {
+                currentSectionId = closestSection;
+            }
+        }
+
+        // 更新導航連結樣式
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === currentSectionId;
+            link.classList.toggle('active', isActive);
+            link.classList.toggle('border-orange-500', isActive);
+            link.classList.toggle('text-gray-900', isActive);
+            link.classList.toggle('text-gray-500', !isActive);
         });
-        this.classList.add('border-orange-500', 'text-gray-900');
-        this.classList.remove('text-gray-500');
-        this.style.transition = 'all 0.2s ease-in-out';
+
+        // 更新 URL hash
+        history.replaceState(null, null, currentSectionId);
+    }
+
+    function observeSections() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -10% 0px',
+            threshold: [0.2]
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const sectionId = `#${entry.target.id}`;
+                sectionVisibility.set(sectionId, entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    updateNavHighlight();
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const offset = 100;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: elementPosition - offset,
+                    behavior: 'smooth'
+                });
+                sectionVisibility.set(targetId, true);
+                updateNavHighlight();
+            }
+        });
     });
-});
+
+    const debouncedUpdate = debounce(updateNavHighlight, 50);
+    window.addEventListener('scroll', debouncedUpdate);
+    window.addEventListener('hashchange', updateNavHighlight);
+
+    observeSections();
+    updateNavHighlight();
+}

@@ -19,6 +19,7 @@ body {
 .hero-bg {
     position: relative;
     transition: background-color 0.75s ease-in-out;
+    padding-bottom: 2rem;
 }
 
 .hero-background {
@@ -96,13 +97,14 @@ nav {
     background-color: #f59e0b;
 }
 
-/* 淺色模式交錯背景 */
 #home {
     background-color: transparent;
+    padding-top: 4rem;
 }
 
 #info {
     background-color: var(--bg-lighter);
+    padding-top: 2rem;
 }
 
 #signup {
@@ -164,13 +166,21 @@ nav {
     transition: color 0.25s ease-in-out;
 }
 
-footer {
+footer.bg-gray-800 {
     background-color: var(--text-primary);
-    transition: background-color 0.75s ease-in-out;
+    color: #ffffff;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
 }
 
-/* 導航欄活躍狀態樣式 */
+/* 導航列活躍狀態樣式 */
 .nav-link.active {
     border-color: #f59e0b; /* border-orange-500 */
     color: var(--text-primary); /* text-gray-900 */
+}
+
+/* 響應式設計下調整 hero section 的底部 padding */
+@media (max-width: 640px) {
+    .hero-bg {
+        padding-bottom: 4rem;
+    }
 }
