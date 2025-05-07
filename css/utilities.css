@@ -1,0 +1,54 @@
+.bg-white {
+    background-color: var(--bg-lighter);
+    transition: background-color 0.75s var(--transition-easing);
+}
+
+.bg-gray-100 {
+    background-color: var(--bg-accent);
+    transition: background-color 0.75s var(--transition-easing);
+}
+
+.text-gray-900 {
+    color: var(--text-primary);
+    transition: color var(--transition-duration) var(--transition-easing);
+}
+
+.text-gray-500 {
+    color: var(--text-secondary);
+    transition: color var(--transition-duration) var(--transition-easing);
+}
+
+.border-orange-500 {
+    border-color: var(--border-accent);
+    transition: border-color var(--transition-duration) var(--transition-easing);
+}
+
+.hover\:text-gray-900:hover {
+    color: var(--text-primary);
+    transition: color var(--transition-duration) var(--transition-easing);
+}
+
+.hover\:border-orange-500:hover {
+    border-color: var(--border-accent);
+    transition: border-color var(--transition-duration) var(--transition-easing);
+}
+
+.text-white {
+    transition: color var(--transition-duration) var(--transition-easing);
+}
+
+body.dark-mode .text-white,
+body.dark-mode .text-white a,
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode li {
+    color: var(--dark-text) !important;
+    transition: color var(--transition-duration) var(--transition-easing);
+}
+
+/* 社交媒體圖標 */
+.social-icon {
+    transition: filter var(--transition-duration) var(--transition-easing);
+}

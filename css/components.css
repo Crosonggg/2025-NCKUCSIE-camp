@@ -1,0 +1,97 @@
+/* 按鈕 */
+.btn-breakfast {
+    background-color: var(--btn-primary);
+    color: #ffffff;
+    border-radius: 9999px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-duration) var(--transition-easing), transform var(--transition-duration) var(--transition-easing), box-shadow var(--transition-duration) var(--transition-easing);
+}
+
+.btn-breakfast:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 立即報名按鈕 */
+.immediate-signup {
+    background-color: var(--btn-primary);
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-duration) var(--transition-easing), transform var(--transition-duration) var(--transition-easing), box-shadow var(--transition-duration) var(--transition-easing);
+}
+
+.immediate-signup:hover,
+.immediate-signup:focus,
+.immediate-signup:active {
+    background-color: var(--btn-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 折疊 */
+.accordion-header {
+    position: relative;
+    cursor: pointer;
+    background-color: var(--bg-lighter);
+    color: var(--text-primary);
+    transition: background-color 0.75s var(--transition-easing), color 0.75s var(--transition-easing);
+}
+
+body.dark-mode .accordion-header {
+    background-color: var(--dark-carousel-bg, #4b5563);
+    color: var(--dark-text);
+}
+
+.accordion-header:hover {
+    background-color: var(--bg-accent);
+}
+
+body.dark-mode .accordion-header:hover {
+    background-color: #6b7280;
+}
+
+.accordion-header::after {
+    content: '\25BC';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s var(--transition-easing);
+}
+
+.accordion-header.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: var(--bg-lighter);
+    color: var(--text-primary);
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out, background-color 0.75s var(--transition-easing), color 0.75s var(--transition-easing);
+    opacity: 0;
+    padding: 0 1rem;
+}
+
+body.dark-mode .accordion-content {
+    background-color: var(--dark-bg-secondary);
+    color: var(--dark-text);
+}
+
+.accordion-content.active {
+    opacity: 1;
+    padding: 1rem 2rem;
+}
+
+/* 課程圖片 */
+#courses img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1024px) {
+    #courses img {
+        max-width: 50%;
+    }
+}

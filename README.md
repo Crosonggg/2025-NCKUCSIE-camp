@@ -9,13 +9,16 @@
 ## 📁 專案架構
 
 ```
-your-website/
+website-folder/
 ├── css/
 │   ├── animations.css
-│   ├── base.css
-│   ├── dark-mode.css
+│   ├── carousel.css
+│   ├── components.css
+│   ├── main.css
 │   ├── map.css
+│   ├── navigation.css
 │   ├── reset.css
+│   ├── utilities.css
 ├── images/
 │   ├── carousel/
 │   │   ├── img0.png
@@ -30,6 +33,7 @@ your-website/
 │   ├── accordion.js
 │   ├── carousel.js
 │   ├── main.js
+│   ├── map.js
 │   ├── navigation.js
 │   ├── theme.js
 ├── index.html

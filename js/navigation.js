@@ -2,6 +2,8 @@ export function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
     const sectionVisibility = new Map();
+    let isSmoothScrolling = false; // 標記是否正在平滑滾動
+    let scrollTimeout = null; // 儲存 setTimeout ID
 
     function debounce(func, wait) {
         let timeout;
@@ -15,7 +17,24 @@ export function initializeNavigation() {
         };
     }
 
+    function setImmediateHighlight(targetId) {
+        // 立即設置目標連結的高亮，並清除其他連結的高亮
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === targetId;
+            link.classList.toggle('active', isActive);
+            link.classList.toggle('border-orange-500', isActive);
+            link.classList.toggle('text-gray-900', isActive);
+            link.classList.toggle('text-gray-500', !isActive);
+        });
+
+        // 更新 URL hash
+        history.replaceState(null, null, targetId);
+    }
+
     function updateNavHighlight() {
+        // 如果正在平滑滾動，跳過高亮更新
+        if (isSmoothScrolling) return;
+
         let currentSectionId = '#home';
 
         // 檢查是否滾動到底部
@@ -69,7 +88,7 @@ export function initializeNavigation() {
             entries.forEach(entry => {
                 const sectionId = `#${entry.target.id}`;
                 sectionVisibility.set(sectionId, entry.isIntersecting);
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !isSmoothScrolling) {
                     updateNavHighlight();
                 }
             });
@@ -85,14 +104,22 @@ export function initializeNavigation() {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
+                clearTimeout(scrollTimeout);
+                setImmediateHighlight(targetId);
+                isSmoothScrolling = true;
                 const offset = 100;
                 const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({
                     top: elementPosition - offset,
                     behavior: 'smooth'
                 });
+
                 sectionVisibility.set(targetId, true);
-                updateNavHighlight();
+
+                scrollTimeout = setTimeout(() => {
+                    isSmoothScrolling = false;
+                    updateNavHighlight();
+                }, 800);
             }
         });
     });
@@ -110,14 +137,18 @@ export function initializeNavigation() {
                 behavior: 'instant'
             });
             sectionVisibility.set(initialHash, true);
-            setTimeout(updateNavHighlight, 100);
+            setTimeout(() => setImmediateHighlight(initialHash), 100);
         } else {
             updateNavHighlight();
         }
     }
 
     const debouncedUpdate = debounce(updateNavHighlight, 50);
-    window.addEventListener('scroll', debouncedUpdate);
+    window.addEventListener('scroll', () => {
+        if (!isSmoothScrolling) {
+            debouncedUpdate();
+        }
+    });
     window.addEventListener('hashchange', updateNavHighlight);
 
     observeSections();

@@ -1,0 +1,132 @@
+/* 全局變數 */
+:root {
+    /* 淺色模式 */
+    --bg-light: #f5e9d8;
+    --bg-lighter: #fff7e6;
+    --bg-accent: #f8d7b5;
+    --text-primary: #4a3728;
+    --text-secondary: #8b6f47;
+    --btn-primary: #d97706;
+    --btn-hover: #b45309;
+    --border-accent: #f59e0b;
+
+    /* 深色模式 */
+    --dark-bg: #2f3136;
+    --dark-bg-secondary: #36393f;
+    --dark-bg-footer: #1e2124;
+    --dark-text: #dcddde;
+    --dark-text-secondary: #b9bbbe;
+    --dark-btn-primary: #5865F2;
+    --dark-btn-hover: #4752C4;
+    --dark-border-accent: #f59e0b;
+
+    /* 動畫與間距 */
+    --transition-duration: 0.25s;
+    --transition-easing: ease-in-out;
+}
+
+/* 深色模式 */
+body.dark-mode {
+    --bg-light: var(--dark-bg);
+    --bg-lighter: var(--dark-bg-secondary);
+    --bg-accent: var(--dark-bg);
+    --text-primary: var(--dark-text);
+    --text-secondary: var(--dark-text-secondary);
+    --btn-primary: var(--dark-btn-primary);
+    --btn-hover: var(--dark-btn-hover);
+    --border-accent: var(--dark-border-accent);
+}
+
+/* 基礎樣式 */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-primary);
+    transition: background-color 0.75s var(--transition-easing), color 0.75s var(--transition-easing);
+    scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero-bg {
+    position: relative;
+    padding-bottom: 2rem;
+    transition: background-color 0.75s var(--transition-easing);
+}
+
+.hero-background {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    filter: brightness(100%) sepia(20%);
+    transition: filter 0.75s var(--transition-easing);
+}
+
+body.dark-mode .hero-background {
+    filter: brightness(60%);
+}
+
+.hero-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* 區塊背景 */
+#home {
+    background-color: transparent;
+    padding-top: 4rem;
+}
+
+#info, #courses, #about {
+    background-color: var(--bg-lighter);
+    padding-top: 2rem;
+}
+
+#signup, #faq, #contact {
+    background-color: var(--bg-accent);
+}
+
+body.dark-mode #home {
+    background-color: transparent;
+}
+
+body.dark-mode #info,
+body.dark-mode #courses,
+body.dark-mode #about {
+    background-color: var(--dark-bg-secondary);
+}
+
+body.dark-mode #signup,
+body.dark-mode #faq,
+body.dark-mode #contact {
+    background-color: var(--dark-bg);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-primary);
+    color: #ffffff;
+    transition: background-color 0.75s var(--transition-easing), color 0.75s var(--transition-easing);
+}
+
+body.dark-mode footer {
+    background-color: var(--dark-bg-footer);
+}
+
+/* 響應式設計 */
+@media (max-width: 640px) {
+    .hero-bg {
+        padding-bottom: 4rem;
+    }
+}

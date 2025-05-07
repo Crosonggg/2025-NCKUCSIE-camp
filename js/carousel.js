@@ -11,7 +11,7 @@ export function initializeCarousel() {
     let autoSlideInterval = null;
     let isTransitioning = false;
 
-    const imageCount = 3;
+    const imageCount = 14;
     const images = [];
     for (let i = 0; i < imageCount; i++) {
         images.push(`images/carousel/img${i}.png`);

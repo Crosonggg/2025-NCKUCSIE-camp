@@ -63,17 +63,11 @@
     100% { transform: translateY(0); }
 }
 
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    background-color: var(--bg-lighter);
-    color: var(--text-primary);
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out, background-color 0.75s ease-in-out, color 0.75s ease-in-out;
-    opacity: 0;
-    padding: 0 1rem;
+@keyframes lineExpand {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
 
-.accordion-content.active {
-    opacity: 1;
-    padding: 1 2rem;
+.route-radio input:checked + .route-label::after {
+    animation: lineExpand 0.3s ease-in-out;
 }

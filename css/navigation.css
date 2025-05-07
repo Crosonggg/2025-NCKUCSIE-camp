@@ -1,0 +1,73 @@
+nav {
+    background-color: var(--bg-lighter);
+    transition: background-color 0.75s var(--transition-easing);
+}
+
+/* 導航連結 */
+.nav-link {
+    color: var(--text-secondary);
+    transition: color var(--transition-duration) var(--transition-easing), border-color var(--transition-duration) var(--transition-easing);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    border-color: var(--border-accent);
+}
+
+.nav-link.active {
+    border-color: var(--border-accent);
+    color: var(--text-primary);
+}
+
+/* 立即報名按鈕 */
+.immediate-signup {
+    background-color: var(--btn-primary);
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-duration) var(--transition-easing), transform var(--transition-duration) var(--transition-easing), box-shadow var(--transition-duration) var(--transition-easing);
+}
+
+.immediate-signup:hover,
+.immediate-signup:focus,
+.immediate-signup:active {
+    background-color: var(--btn-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 深色模式切換器 */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dark-mode-toggle input {
+    display: none;
+}
+
+.dark-mode-toggle .toggle-icon {
+    font-size: 1.5rem;
+    transition: transform var(--transition-duration) var(--transition-easing);
+}
+
+.dark-mode-toggle input:checked + .toggle-icon {
+    transform: rotate(360deg);
+}
+
+.dark-mode-toggle .sun {
+    color: var(--btn-hover);
+}
+
+.dark-mode-toggle .moon {
+    color: var(--dark-text-secondary);
+    display: none;
+}
+
+.dark-mode-toggle input:checked ~ .sun {
+    display: none;
+}
+
+.dark-mode-toggle input:checked ~ .moon {
+    display: inline;
+}

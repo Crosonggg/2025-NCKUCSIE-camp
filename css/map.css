@@ -15,7 +15,11 @@
 .gmap_canvas iframe {
     width: 100%;
     height: 100%;
-    transition: filter 0.75s ease-in-out;
+    transition: filter 0.75s var(--transition-easing);
+}
+
+body.dark-mode .gmap_canvas iframe {
+    filter: invert(90%) hue-rotate(180deg);
 }
 
 .mapouter a {
@@ -23,7 +27,7 @@
     font-size: 0.85em;
     text-align: center;
     padding: 5px 0;
-    color: #6c757d;
+    color: var(--text-secondary);
     text-decoration: none;
 }
 
@@ -31,8 +35,84 @@
     display: none !important;
 }
 
+.route-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.route-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.route-radio input {
+    display: none;
+}
+
+.route-radio .route-label {
+    color: var(--text-secondary);
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-duration) var(--transition-easing), border-color var(--transition-duration) var(--transition-easing);
+}
+
+body.dark-mode .route-radio .route-label {
+    color: var(--dark-text-secondary);
+}
+
+.route-radio .route-label:hover {
+    color: var(--text-primary);
+    border-color: var(--border-accent);
+}
+
+body.dark-mode .route-radio .route-label:hover {
+    color: var(--dark-text);
+    border-color: var(--dark-route-accent, #89caf5);
+}
+
+.route-radio input:checked + .route-label {
+    border-color: var(--border-accent);
+    color: var(--text-primary);
+}
+
+body.dark-mode .route-radio input:checked + .route-label {
+    border-color: var(--dark-route-accent, #89caf5);
+    color: var(--dark-text);
+}
+
+.route-radio .route-label::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition-duration) var(--transition-easing);
+}
+
+body.dark-mode .route-radio .route-label::after {
+    background-color: var(--dark-route-accent, #89caf5);
+}
+
+.route-radio input:checked + .route-label::after {
+    transform: scaleX(1);
+}
+
+/* 響應式設計 */
 @media (max-width: 640px) {
     .mapouter {
-        height: 300px;
+        height: 400px;
+    }
+
+    .route-radio .route-label {
+        font-size: 0.875rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
