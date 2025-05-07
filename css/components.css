@@ -81,7 +81,7 @@ body.dark-mode .accordion-content {
 
 .accordion-content.active {
     opacity: 1;
-    padding: 1rem 2rem;
+    padding: 1 2rem;
 }
 
 /* 課程圖片 */
