@@ -27,10 +27,11 @@ your-website/
 │   ├── favicon.ico
 │   ├── favicon.png
 ├── js/
-│   ├── theme.js
+│   ├── accordion.js
+│   ├── carousel.js
 │   ├── main.js
 │   ├── navigation.js
-│   ├── carousel.js
+│   ├── theme.js
 ├── index.html
 ├── LICENSE
 ├── README.md

@@ -2,20 +2,12 @@ body.dark-mode {
     --bg-color: #2f3136;
     --text-color: #dcddde;
     --nav-bg: #36393f;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 body.dark-mode .hero-background {
-    background-image: url('../images/background.png');
     filter: brightness(60%);
-    transition: filter 0.75s ease-in-out;
-}
-
-.hero-background {
-    background-image: url('../images/background.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    filter: brightness(100%) sepia(20%);
     transition: filter 0.75s ease-in-out;
 }
 
@@ -176,15 +168,35 @@ body.dark-mode footer.bg-gray-800 {
 
 body.dark-mode .carousel-prev,
 body.dark-mode .carousel-next {
-    background-color: #4b5563; /* gray-600 */
+    background-color: #4b5563;
 }
+
 body.dark-mode .carousel-prev:hover,
 body.dark-mode .carousel-next:hover {
-    background-color: #9ca3af; /* gray-400 */
+    background-color: #9ca3af;
 }
+
 body.dark-mode .dot {
-    background-color: #9ca3af; /* gray-400 */
+    background-color: #9ca3af;
 }
+
 body.dark-mode .dot.bg-gray-600 {
-    background-color: #d1d5db; /* gray-300 */
+    background-color: #d1d5db;
+}
+
+/* 深色模式下的折疊樣式 */
+body.dark-mode .accordion-header {
+    background-color: #4b5563;
+    color: #dcddde;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out;
+}
+
+body.dark-mode .accordion-header:hover {
+    background-color: #6b7280;
+}
+
+body.dark-mode .accordion-content {
+    background-color: #36393f;
+    color: #dcddde;
+    transition: background-color 0.75s ease-in-out, color 0.75s ease-in-out, max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out;
 }

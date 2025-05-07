@@ -174,8 +174,8 @@ footer.bg-gray-800 {
 
 /* 導航列活躍狀態樣式 */
 .nav-link.active {
-    border-color: #f59e0b; /* border-orange-500 */
-    color: var(--text-primary); /* text-gray-900 */
+    border-color: #f59e0b;
+    color: var(--text-primary);
 }
 
 /* 響應式設計下調整 hero section 的底部 padding */
@@ -207,7 +207,7 @@ footer.bg-gray-800 {
 
 .carousel-image {
     width: 100%;
-    max-height: 500px; /* 桌面端最大高度 */
+    max-height: 800px;
     object-fit: contain;
     object-position: center;
     margin: 0 auto;
@@ -216,7 +216,7 @@ footer.bg-gray-800 {
 
 @media (max-width: 640px) {
     .carousel-image {
-        max-height: 350px; /* 手機端最大高度 */
+        max-height: 500px;
     }
 }
 
@@ -230,20 +230,39 @@ footer.bg-gray-800 {
 
 .carousel-prev:hover,
 .carousel-next:hover {
-    background-color: #f59e0b; /* 與亮色模式按鈕hover一致 */
+    background-color: #f59e0b;
     color: #ffffff;
 }
 
 /* 輪播點點樣式（亮色模式） */
 .dot {
-    background-color: var(--text-secondary); /* 使用次要文字顏色作為未選中狀態 */
+    background-color: var(--text-secondary);
     transition: background-color 0.25s ease-in-out;
 }
 
 .dot.bg-gray-600 {
-    background-color: var(--text-primary); /* 選中狀態使用主要文字顏色 */
+    background-color: var(--text-primary);
 }
 
 .dot:hover {
-    background-color: #f59e0b; /* hover 時與按鈕一致 */
+    background-color: #f59e0b;
+}
+
+.accordion-header {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.accordion-header::after {
+    content: '\25BC';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active::after {
+    transform: translateY(-50%) rotate(180deg);
 }
