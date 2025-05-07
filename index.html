@@ -299,16 +299,23 @@
 <!-- About Us Section -->
 <section id="about" class="py-16 bg-white pt-16 animate-fade-in">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8">關於我們</h2>
-        <p>2025成大資訊營隊由國立成功大學資訊工程學系學生會主辦，匯集熱情洋溢的系學會幹部與專業小隊輔，致力為高中生打造一場結合專業課程、實作體驗與校園生活的科技盛宴。透過多元化的課程與活動，激發你的創意與潛能，開啟資訊科技的未來之門！</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div class="animate-slide-right">
-                <img src="images/cadre1.jpg" alt="幹部" class="w-full h-48 object-cover mb-4">
-                <p>活動總召：負責整體活動規劃與執行，確保每位學員擁有難忘體驗。</p>
-            </div>
-            <div class="animate-slide-left">
-                <img src="images/team1.jpg" alt="小隊輔" class="w-full h-48 object-cover mb-4">
-                <p>小隊輔：陪伴學員參與活動，分享成大校園生活與學習經驗。</p>
+        <h2 class="text-3xl font-bold mb-8 text-gray-900">關於我們</h2>
+        <p class="text-gray-900 mb-8">2025成大資訊營隊由國立成功大學資訊工程學系學生會主辦，匯集熱情洋溢的系學會幹部與專業小隊輔，致力為高中生打造一場結合專業課程、實作體驗與校園生活的科技盛宴。透過多元化的課程與活動，激發你的創意與潛能，開啟資訊科技的未來之門！</p>
+        <div class="relative">
+            <!-- Carousel Container -->
+            <div class="carousel overflow-hidden relative">
+                <div class="carousel-inner flex transition-transform duration-500 ease-in-out"></div>
+                <button class="carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition duration-300" aria-label="Previous Slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button class="carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition duration-300" aria-label="Next Slide">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                <div draggable="false" class="carousel-dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
             </div>
         </div>
     </div>

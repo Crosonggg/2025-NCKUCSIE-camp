@@ -173,3 +173,18 @@ body.dark-mode footer.bg-gray-800 {
 .dark-mode-toggle input:checked ~ .moon {
     display: inline;
 }
+
+body.dark-mode .carousel-prev,
+body.dark-mode .carousel-next {
+    background-color: #4b5563; /* gray-600 */
+}
+body.dark-mode .carousel-prev:hover,
+body.dark-mode .carousel-next:hover {
+    background-color: #9ca3af; /* gray-400 */
+}
+body.dark-mode .dot {
+    background-color: #9ca3af; /* gray-400 */
+}
+body.dark-mode .dot.bg-gray-600 {
+    background-color: #d1d5db; /* gray-300 */
+}

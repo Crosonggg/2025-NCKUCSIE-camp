@@ -10,23 +10,29 @@
 
 ```
 your-website/
-├── index.html
 ├── css/
+│   ├── animations.css
 │   ├── base.css
 │   ├── dark-mode.css
-│   ├── reset.css
-│   ├── animations.css
 │   ├── map.css
+│   ├── reset.css
 ├── images/
+│   ├── carousel/
+│   │   ├── img0.png
+│   │   ├── img1.png
+│   │   ├── ... img{n}.png
 │   ├── background.png
-│   ├── egg-logo.png
 │   ├── course-schedule.png
-│   ├── cadre1.jpg
-│   ├── team1.jpg
+│   ├── egg-logo.png
+│   ├── favicon.ico
+│   ├── favicon.png
 ├── js/
 │   ├── theme.js
 │   ├── main.js
 │   ├── navigation.js
+│   ├── carousel.js
+├── index.html
+├── LICENSE
 ├── README.md
 ```
 

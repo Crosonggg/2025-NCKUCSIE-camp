@@ -184,3 +184,66 @@ footer.bg-gray-800 {
         padding-bottom: 4rem;
     }
 }
+
+/* 輪播圖片樣式 */
+.carousel {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-image {
+    width: 100%;
+    max-height: 500px; /* 桌面端最大高度 */
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .carousel-image {
+        max-height: 350px; /* 手機端最大高度 */
+    }
+}
+
+/* 輪播按鈕樣式（亮色模式） */
+.carousel-prev,
+.carousel-next {
+    background-color: var(--bg-accent);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: #f59e0b; /* 與亮色模式按鈕hover一致 */
+    color: #ffffff;
+}
+
+/* 輪播點點樣式（亮色模式） */
+.dot {
+    background-color: var(--text-secondary); /* 使用次要文字顏色作為未選中狀態 */
+    transition: background-color 0.25s ease-in-out;
+}
+
+.dot.bg-gray-600 {
+    background-color: var(--text-primary); /* 選中狀態使用主要文字顏色 */
+}
+
+.dot:hover {
+    background-color: #f59e0b; /* hover 時與按鈕一致 */
+}
