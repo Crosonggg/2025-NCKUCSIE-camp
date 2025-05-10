@@ -1,10 +1,12 @@
+/* components.css */
+
 /* 按鈕 */
 .btn-breakfast {
     background-color: var(--btn-primary);
     color: #ffffff;
     border-radius: 9999px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color var(--transition-duration) var(--transition-easing), transform var(--transition-duration) var(--transition-easing), box-shadow var(--transition-duration) var(--transition-easing);
+    transition: background-color var(--transition-duration) var(--transition-easing), transform var(--transition-duration) var(--transition-easing), box-shadow var 箱-shadow var(--transition-duration) var(--transition-easing);
 }
 
 .btn-breakfast:hover {
@@ -33,22 +35,22 @@
 .accordion-header {
     position: relative;
     cursor: pointer;
-    background-color: var(--bg-lighter);
-    color: var(--text-primary);
-    transition: background-color 0.75s var(--transition-easing), color 0.75s var(--transition-easing);
+    background-color: #dcbf97; /* 淺色模式：溫暖的淺金黃色，與主題色調協調且不與section背景重疊 */
+    color: #4a3728; /* 使用主題的主要文字顏色 */
+    transition: background-color 0.25s var(--transition-easing), color 0.25s var(--transition-easing);
 }
 
 body.dark-mode .accordion-header {
-    background-color: var(--dark-carousel-bg, #4b5563);
-    color: var(--dark-text);
+    background-color: #28292e; /* 深色模式：深棕色，與深色模式主題協調且不與section背景重疊 */
+    color: #dcddde; /* 使用深色模式的文字顏色 */
 }
 
 .accordion-header:hover {
-    background-color: var(--bg-accent);
+    background-color: #d6a156; /* 淺色模式懸停：使用主題按鈕主色 */
 }
 
 body.dark-mode .accordion-header:hover {
-    background-color: #6b7280;
+    background-color: #404453; /* 深色模式懸停：使用深色模式按鈕主色 */
 }
 
 .accordion-header::after {
@@ -67,21 +69,20 @@ body.dark-mode .accordion-header:hover {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    background-color: var(--bg-lighter);
+    background-color: inherit; /* 跟隨所在section的背景顏色 */
     color: var(--text-primary);
     transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease-out, background-color 0.75s var(--transition-easing), color 0.75s var(--transition-easing);
     opacity: 0;
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 body.dark-mode .accordion-content {
-    background-color: var(--dark-bg-secondary);
     color: var(--dark-text);
 }
 
 .accordion-content.active {
     opacity: 1;
-    padding: 1 2rem;
+    padding: 0rem 2rem;
 }
 
 /* 課程圖片 */
